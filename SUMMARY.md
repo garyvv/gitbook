@@ -13,7 +13,10 @@
 * [5.环境配置](chapters/env/README.md)
     * [laradock](chapters/env/laradock.md)
     * [Git多ssh设置](chapters/env/git.md)
+    * [ApiDoc](chapters/env/apidoc.md)
 * [6.NodeJS](chapters/nodejs/README.md)
     * [pm2](chapters/nodejs/pm2.md)
         * [开机自启动](chapters/nodejs/pm2/start.md)
+* [7.自动化部署](chapters/deploy/README.md)
+    * [Jenkins](chapters/deploy/jenkins.md)
 
