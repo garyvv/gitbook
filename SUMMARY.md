@@ -12,6 +12,7 @@
     * [硬盘大文件查询](chapters/nginx/search-file.md)
 * [4.Mac](chapters/mac/README.md)
     * [常用软件](chapters/mac/common.md)
+    * [Git相关](chapters/mac/git.md)
 * [5.环境配置](chapters/env/README.md)
     * [laradock](chapters/env/laradock.md)
     * [Git多ssh设置](chapters/env/git.md)
