@@ -137,6 +137,9 @@ brew cask install iterm2
 # 搜狗输入法
 brew cask install sogouinput
 
+# 屏保安装屏保程序 Fliqlo
+brew cask install fliqlo 
+
 # cheatsheet
 brew cask install cheatsheet
 
