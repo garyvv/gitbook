@@ -22,4 +22,9 @@
         * [开机自启动](chapters/nodejs/pm2/start.md)
 * [7.自动化部署](chapters/deploy/README.md)
     * [Jenkins](chapters/deploy/jenkins.md)
+* [8.运维相关](chapters/ops/README.md)
+    * [奇淫巧技](chapters/ops/skill.md)
+    * [Redis主从复制原理](chapters/ops/redis-ms.md)
+* [8.计算机网络](chapters/network/README.md)
+    * [HTTP 2.0 原理详细分析](chapters/network/http2.md)
 
