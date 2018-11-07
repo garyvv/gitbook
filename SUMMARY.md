@@ -8,6 +8,7 @@
     * [一些题](chapters/php/interview.md)
         * [2018-07-03](chapters/php/interview/20180703.md)
         * [2018-10-10](chapters/php/interview/20181010.md)
+        * [redis 高可用](chapters/php/interview/redis.md)
     * [正则](chapters/php/regex.md)
 * [3.nginx](chapters/nginx/README.md)
     * [删除大文件空间没释放](chapters/nginx/big-file.md)
@@ -15,6 +16,7 @@
 * [4.Mac](chapters/mac/README.md)
     * [常用软件](chapters/mac/common.md)
     * [Git相关](chapters/mac/git.md)
+    * [Charles安装证书抓https](chapters/mac/charles-https.md)
 * [5.环境配置](chapters/env/README.md)
     * [laradock](chapters/env/laradock.md)
     * [Git多ssh设置](chapters/env/git.md)
@@ -34,4 +36,7 @@
     * [HTTP 2.0 原理详细分析](chapters/network/http2.md)
     * [HTTP/2 for a Faster Web](chapters/network/http2-en.md)
     * [详解tcp连接数](chapters/network/tcp.md)
+* [9.Redis](chapters/redis/README.md)
+    * [笔记](chapters/redis/note.md)
+    * [复制](chapters/redis/Replication.md)
 
