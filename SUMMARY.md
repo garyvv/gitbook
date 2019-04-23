@@ -37,6 +37,7 @@
     * [HTTP/2 for a Faster Web](chapters/network/http2-en.md)
     * [详解tcp连接数](chapters/network/tcp.md)
     * [tcp 大量 wait 解决](chapters/network/tcp-wait.md)
+    * [一个tcp上可以发送多少 http 请求](chapters/network/tcp-http.md)
 * [9.Redis](chapters/redis/README.md)
     * [笔记](chapters/redis/note.md)
     * [复制](chapters/redis/Replication.md)
