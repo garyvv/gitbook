@@ -67,10 +67,15 @@ http
     gzip_buffers     4 16k;
     gzip_http_version 1.1;
     gzip_comp_level 2;
+    # 进行压缩的文件类型。javascript有多种形式。其中的值可以在 mime.types 文件中找到。
     gzip_types     text/plain application/javascript application/x-javascript text/javascript text/css application/xml application/xml+rss;
+    # 是否在http header中添加Vary: Accept-Encoding，建议开启
     gzip_vary on;
     gzip_proxied   expired no-cache no-store private auth;
+    # 禁用IE 6 gzip
     gzip_disable   "MSIE [1-6]\.";
+    # 设置缓存路径并且使用一块最大100M的共享内存，用于硬盘上的文件索引，包括文件名和请求次数，每个文件在1天内若不活跃（无请求）则从硬盘上淘汰，硬盘缓存最大10G，满了则根据LRU算法自动清除缓存。
+    proxy_cache_path /var/cache/nginx/cache levels=1:2 keys_zone=filecache:1024m inactive=7d max_size=100g;
 
     log_format  access  '$remote_addr - $remote_user [$time_local] requesthost:"$http_host"; "$request" requesttime:"$request_time"; '
         '$status $body_bytes_sent "$http_referer" - $request_body'
@@ -102,6 +107,13 @@ http
             proxy_cache_valid 200 302 10m;
             proxy_cache_valid 301 1h;
             proxy_cache_valid any 1m;
+
+            proxy_cache filecache;
+            proxy_cache_valid 200 302 7d;
+            proxy_cache_valid 404 10m;
+            proxy_cache_valid any 7d;
+            proxy_cache_use_stale error timeout invalid_header updating http_500 http_502 http_503 http_504;
+	          add_header X-Cache-Status $upstream_cache_status;  #添加此行
      	}
 
         access_log  /usr/local/nginx/logs/access.log main;
@@ -128,8 +140,14 @@ http
          proxy_connect_send_timeout     10s;
 
          location / {
-             proxy_set_header Host $host;
-             proxy_pass $scheme://$host$request_uri;
+            proxy_set_header Host $host;
+            proxy_pass $scheme://$host$request_uri;
+            proxy_cache filecache;
+            proxy_cache_valid 200 302 7d;
+            proxy_cache_valid 404 10m;
+            proxy_cache_valid any 7d;
+            proxy_cache_use_stale error timeout invalid_header updating http_500 http_502 http_503 http_504;
+	          add_header X-Cache-Status $upstream_cache_status;  #添加此行
          }
 
 	 access_log  /usr/local/nginx/logs/ssl_access.log main;
